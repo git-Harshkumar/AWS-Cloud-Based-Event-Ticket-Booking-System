@@ -1,0 +1,26 @@
+STOP COMMAND - 
+
+$INSTANCE_1 = "i-09c1ed562f5eaeb6e"
+$INSTANCE_2 = "i-059faa2dbdd0f3964"
+
+# 1. Stop EC2 compute
+aws ec2 stop-instances --instance-ids $INSTANCE_1 $INSTANCE_2
+
+# 2. Delete the ALB to avoid the ~$0.54/day load balancer idle fee
+$ALB_ARN = (aws elbv2 describe-load-balancers --names eventflow-alb --query "LoadBalancers[0].LoadBalancerArn" --output text 2>$null)
+if ($ALB_ARN) { aws elbv2 delete-load-balancer --load-balancer-arn $ALB_ARN }
+
+$TG_ARN = (aws elbv2 describe-target-groups --names eventflow-backend-tg --query "TargetGroups[0].TargetGroupArn" --output text 2>$null)
+if ($TG_ARN) { aws elbv2 delete-target-group --target-group-arn $TG_ARN }
+
+Write-Host "All AWS cost-incurring services stopped!"
+
+
+
+
+
+
+START COMMAND -
+
+cd D:\Cloud_Project
+.\AWS_RESUME_GUIDE.ps1
