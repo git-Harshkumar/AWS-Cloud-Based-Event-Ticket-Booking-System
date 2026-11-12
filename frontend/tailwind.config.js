@@ -1,45 +1,43 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
         primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+          50: "#f4eef8",
+          100: "#e7dcef",
+          200: "#d9c8e5",
+          300: "#c4aad5",
+          400: "#ae8fc4",
+          500: "#9873b2",
+          600: "#7c5597",
+          700: "#684780",
+          800: "#563b68",
+          900: "#473052",
         },
         secondary: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-        }
+          50: "#f5f1eb",
+          100: "#eee8e1",
+          200: "#e4dcd4",
+          300: "#d0c4d0",
+          400: "#a897b0",
+          500: "#786380",
+          600: "#6f5d7a",
+          700: "#584862",
+          800: "#44374e",
+          900: "#342d40",
+        },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ["Event Sans", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        'card': '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
-        'card-hover': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
-      }
+        card: "inset 2px 3px 4px #fffdfb, inset -3px -4px 7px #e2dbd1, 5px 8px 16px #b6a99c20",
+        "card-hover":
+          "inset 2px 3px 4px #fffdfb, inset -3px -4px 7px #e2dbd1, 7px 14px 22px #b6a99c35",
+      },
     },
   },
   plugins: [],
-}
+};
